@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tariffs xmlns="http://www.example.com/tariffs"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.example.com/tariffs tariffs.xsd">
+    <tariff name="Smart 1" operatorName="A1">
+        <payroll>15.25</payroll>
+        <callPrice>
+            <innerCalls>0.20</innerCalls>
+            <outerCalls>0.75</outerCalls>
+            <fixedLineCalls>1.10</fixedLineCalls>
+        </callPrice>
+        <smsPrice>0.15</smsPrice>
+        <parameters>
+            <favoriteNum>2</favoriteNum>
+            <tariffication>60</tariffication>
+            <startPay>5.05</startPay>
+        </parameters>
+    </tariff>
+    <tariff name="Smart 4" operatorName="A1">
+        <payroll>20.25</payroll>
+        <callPrice>
+            <innerCalls>0.15</innerCalls>
+            <outerCalls>0.55</outerCalls>
+            <fixedLineCalls>1.00</fixedLineCalls>
+        </callPrice>
+        <smsPrice>0.12</smsPrice>
+        <parameters>
+            <favoriteNum>5</favoriteNum>
+            <tariffication>60</tariffication>
+            <startPay>7.05</startPay>
+        </parameters>
+    </tariff>
+</tariffs>

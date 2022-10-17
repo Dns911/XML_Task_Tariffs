@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.com/tariffs"
+           xmlns:tns="http://www.example.com/tariffs" elementFormDefault="qualified">
+  <element name="tariffs">
+    <complexType>
+      <sequence>
+        <element name="tariff" type="tns:Tariff" minOccurs="1" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+  <complexType name="Tariff">
+    <sequence>
+      <element name="payroll" type="tns:Cost"/>
+      <element name="callPrice" type="tns:CallPrice"/>
+      <element name="smsPrice" type="tns:Cost"/>
+      <element name="parameters" type="tns:Parameter"/>
+    </sequence>
+    <attribute name="name" use="required">
+      <simpleType>
+        <restriction base="string">
+          <pattern value="([A-Z])[a-zA-z0-9 ]{1,10}[a-zA-z0-9]"/>
+        </restriction>
+      </simpleType>
+    </attribute>
+    <attribute name="operatorName" use="required">
+      <simpleType>
+        <restriction base="string">
+          <enumeration value="A1"/>
+          <enumeration value="MTS"/>
+          <enumeration value="LIFE"/>
+        </restriction>
+      </simpleType>
+    </attribute>
+  </complexType>
+  <complexType name="CallPrice">
+    <sequence>
+      <element name="innerCalls" type="tns:Cost"/>
+      <element name="outerCalls" type="tns:Cost"/>
+      <element name="fixedLineCalls" type="tns:Cost"/>
+    </sequence>
+  </complexType>
+  <complexType name="Parameter">
+    <sequence>
+      <element name="favoriteNum" type="nonNegativeInteger"/>
+      <element name="tariffication">
+        <simpleType>
+          <restriction base="integer">
+            <enumeration value="12"/>
+            <enumeration value="60"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="startPay" type="double"/>
+    </sequence>
+  </complexType>
+  <simpleType name="Cost">
+    <restriction base="double">
+      <minInclusive value="0"/>
+      <pattern value="[0-9]*[.][0-9][0-9]"/>
+    </restriction>
+  </simpleType>
+</schema>
