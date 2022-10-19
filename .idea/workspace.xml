@@ -5,23 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5132000-df7b-43f8-b1c5-ba6376c34e81" name="Changes" comment="17.10">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/task3/AbstactEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/task3/Dwarf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/task3/Elf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/task3/FantasyMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/task3/UnitComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/task3/UnitComposite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/task3/entity/GroupType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/handler/ConsoleTariffHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/parser/SaxParserMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/parser/TariffSaxBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/prop/text.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/prop/text_be_BY.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/prop/text_ru_RU.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/tariffs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/tariffs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/tariffs.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/data/tariffs.xsd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/entity/Tariff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/entity/Tariff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/handler/TariffEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/handler/TariffTags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/task3/FantasyMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/task3/FantasyMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/handler/TariffHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/handler/TariffHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/handler/TariffTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/handler/TariffTag.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,18 +47,20 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "last_opened_file_path": "D:/EDUCATION/JAVA/Practice/XML_Task",
+    "last_opened_file_path": "D:/EDUCATION/JAVA/Practice/XML_Task_Tariffs",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "File.Encoding"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\EDUCATION\JAVA\Practice\XML_Task_Tariffs\src\main\resources\prop" />
       <recent name="D:\EDUCATION\JAVA\Practice\XML_Task_Tariffs\data" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SaxParserMain">
+  <component name="RunManager" selected="Application.FantasyMain">
     <configuration name="BaseValidatorMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.epam.xml.tariffs.validator.BaseValidatorMain" />
       <module name="XML_Task_Tariffs" />
@@ -109,9 +102,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FantasyMain" />
         <item itemvalue="Application.SaxParserMain" />
         <item itemvalue="Application.BaseValidatorMain" />
-        <item itemvalue="Application.FantasyMain" />
       </list>
     </recent_temporary>
   </component>
@@ -131,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666020685350</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="17.10">
+      <created>1666193593975</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666193593975</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,5 +148,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="17.10" />
     <option name="LAST_COMMIT_MESSAGE" value="17.10" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,6 +1,6 @@
 package com.epam.xml.tariffs.handler;
 
-public enum TariffTags {
+public enum TariffTag {
     TARIFFS("tariffs"),
     NAME("name"),
     OPERATOR_NAME("operator name"),
@@ -18,7 +18,7 @@ public enum TariffTags {
 
     private String value;
 
-    TariffTags(String value) {
+    TariffTag(String value) {
         this.value = value;
     }
 

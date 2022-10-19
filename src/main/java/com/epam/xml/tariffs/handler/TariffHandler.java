@@ -11,13 +11,13 @@ import java.util.Set;
 public class TariffHandler extends DefaultHandler {
     private Set<Tariff> tariffs;
     private Tariff current;
-    private TariffTags currentTags;
-    private EnumSet<TariffTags> withText;
+    private TariffTag currentTag;
+    private EnumSet<TariffTag> withText;
     private static final String ELEMENT_TARIFF = "tariff";
 
     public TariffHandler() {
         tariffs = new HashSet<>();
-        withText = EnumSet.range(TariffTags.PAYROLL, TariffTags.STARTPAY);
+        withText = EnumSet.range(TariffTag.PAYROLL, TariffTag.STARTPAY);
     }
 
     public Set<Tariff> getTariffs() {
@@ -35,9 +35,9 @@ public class TariffHandler extends DefaultHandler {
                 current.setOperatorName(attrs.getValue(0));
             }
         } else {
-            TariffTags temp = TariffTags.valueOf(qName.toUpperCase());
+            TariffTag temp = TariffTag.valueOf(qName.toUpperCase());
             if (withText.contains(temp)) {
-                currentTags = temp;
+                currentTag = temp;
             }
         }
     }
@@ -50,8 +50,8 @@ public class TariffHandler extends DefaultHandler {
 
     public void characters(char[] ch, int start, int length) {
         String data = new String(ch, start, length).strip();
-        if (currentTags != null) {
-            switch (currentTags) {
+        if (currentTag != null) {
+            switch (currentTag) {
                 case PAYROLL -> current.setPayroll(Double.parseDouble(data));
                 case INNERCALLS -> current.getCallPrice().setInnerCalls(Double.parseDouble(data));
                 case OUTERCALLS -> current.getCallPrice().setOuterCalls(Double.parseDouble(data));
@@ -61,10 +61,10 @@ public class TariffHandler extends DefaultHandler {
                 case TARIFFICATION -> current.getTariffParameter().setTariffication(Integer.parseInt(data));
                 case STARTPAY -> current.getTariffParameter().setStartPay(Double.parseDouble(data));
                 default -> throw new EnumConstantNotPresentException(
-                        currentTags.getDeclaringClass(), currentTags.name());
+                        currentTag.getDeclaringClass(), currentTag.name());
             }
         }
-        currentTags = null;
+        currentTag = null;
     }
 
 }
