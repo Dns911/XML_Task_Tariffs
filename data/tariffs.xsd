@@ -14,7 +14,7 @@
       <element name="payroll" type="tns:Cost"/>
       <element name="callPrice" type="tns:CallPrice"/>
       <element name="smsPrice" type="tns:Cost"/>
-      <element name="parameters" type="tns:Parameter"/>
+      <element name="tariffParameter" type="tns:TariffParameter"/>
     </sequence>
     <attribute name="name" use="required">
       <simpleType>
@@ -40,7 +40,7 @@
       <element name="fixedLineCalls" type="tns:Cost"/>
     </sequence>
   </complexType>
-  <complexType name="Parameter">
+  <complexType name="TariffParameter">
     <sequence>
       <element name="favoriteNum" type="nonNegativeInteger"/>
       <element name="tariffication">
@@ -51,7 +51,7 @@
           </restriction>
         </simpleType>
       </element>
-      <element name="startPay" type="double"/>
+      <element name="startPay" type="tns:Cost"/>
     </sequence>
   </complexType>
   <simpleType name="Cost">

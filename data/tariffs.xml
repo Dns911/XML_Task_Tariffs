@@ -10,11 +10,11 @@
             <fixedLineCalls>1.10</fixedLineCalls>
         </callPrice>
         <smsPrice>0.15</smsPrice>
-        <parameters>
+        <tariffParameter>
             <favoriteNum>2</favoriteNum>
             <tariffication>60</tariffication>
             <startPay>5.05</startPay>
-        </parameters>
+        </tariffParameter>
     </tariff>
     <tariff name="Smart 4" operatorName="A1">
         <payroll>20.25</payroll>
@@ -24,10 +24,10 @@
             <fixedLineCalls>1.00</fixedLineCalls>
         </callPrice>
         <smsPrice>0.12</smsPrice>
-        <parameters>
+        <tariffParameter>
             <favoriteNum>5</favoriteNum>
             <tariffication>60</tariffication>
             <startPay>7.05</startPay>
-        </parameters>
+        </tariffParameter>
     </tariff>
 </tariffs>

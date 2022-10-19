@@ -4,22 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5132000-df7b-43f8-b1c5-ba6376c34e81" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/tariffs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/tariffs.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/entity/Tariff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/handler/TariffEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/handler/TariffErrorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/handler/TariffHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/validator/BaseValidatorMain.java" afterDir="false" />
+    <list default="true" id="b5132000-df7b-43f8-b1c5-ba6376c34e81" name="Changes" comment="17.10">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/task3/AbstactEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/task3/Dwarf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/task3/Elf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/task3/FantasyMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/task3/UnitComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/task3/UnitComposite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/task3/entity/GroupType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/handler/ConsoleTariffHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/parser/SaxParserMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/parser/TariffSaxBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/tariffs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/tariffs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/tariffs.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/data/tariffs.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/entity/Tariff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/entity/Tariff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/handler/TariffEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/handler/TariffTags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/handler/TariffHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/xml/tariffs/handler/TariffHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +31,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
       </list>
@@ -52,10 +55,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/EDUCATION/JAVA/Practice/XML_Task_Tariffs",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "last_opened_file_path": "D:/EDUCATION/JAVA/Practice/XML_Task",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -63,7 +67,7 @@
       <recent name="D:\EDUCATION\JAVA\Practice\XML_Task_Tariffs\data" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SaxParserMain">
     <configuration name="BaseValidatorMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.epam.xml.tariffs.validator.BaseValidatorMain" />
       <module name="XML_Task_Tariffs" />
@@ -77,9 +81,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FantasyMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.epam.task3.FantasyMain" />
+      <module name="XML_Task_Tariffs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.task3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SaxParserMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.epam.xml.tariffs.parser.SaxParserMain" />
+      <module name="XML_Task_Tariffs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.xml.tariffs.parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SaxParserMain" />
         <item itemvalue="Application.BaseValidatorMain" />
+        <item itemvalue="Application.FantasyMain" />
       </list>
     </recent_temporary>
   </component>
@@ -92,6 +124,14 @@
       <option name="presentableId" value="Default" />
       <updated>1665945488941</updated>
     </task>
+    <task id="LOCAL-00001" summary="17.10">
+      <created>1666020685350</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666020685350</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -104,5 +144,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="17.10" />
+    <option name="LAST_COMMIT_MESSAGE" value="17.10" />
   </component>
 </project>

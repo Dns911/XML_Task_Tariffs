@@ -5,9 +5,9 @@ public class Tariff {
     private String name;
     private String operatorName;
     private double payroll;
-    private CallPrice callPrice;
+    private CallPrice callPrice = new CallPrice();
     private double smsPrice;
-    private TariffParameter tariffParameter;
+    private TariffParameter tariffParameter = new TariffParameter();
 
     public Tariff() {
     }
@@ -71,14 +71,13 @@ public class Tariff {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Tariff{");
-        sb.append("name='").append(name).append('\'');
-        sb.append(", operatorName='").append(operatorName).append('\'');
-        sb.append(", payroll=").append(payroll);
-        sb.append(", callPrice=").append(callPrice);
-        sb.append(", smsPrice=").append(smsPrice);
-        sb.append(", parameter=").append(tariffParameter);
-        sb.append('}');
+        final StringBuilder sb = new StringBuilder("TARIFF ");
+        sb.append("\nName: ").append(name);
+        sb.append("\nOperator: ").append(operatorName);
+        sb.append("\nPayroll: ").append(payroll).append(" BYN");
+        sb.append(callPrice);
+        sb.append("\nSMS Price: ").append(smsPrice).append(" BYN/sms");
+        sb.append(tariffParameter).append("\n");
         return sb.toString();
     }
 
@@ -122,11 +121,10 @@ public class Tariff {
 
         @Override
         public String toString() {
-            final StringBuilder sb = new StringBuilder("CallPrice{");
-            sb.append("innerCalls=").append(innerCalls);
-            sb.append(", outerCalls=").append(outerCalls);
-            sb.append(", fixedLineCalls=").append(fixedLineCalls);
-            sb.append('}');
+            final StringBuilder sb = new StringBuilder("\nCall Prices:");
+            sb.append("\n\tInner Calls: ").append(innerCalls).append(" BYN/min");
+            sb.append("\n\tOuter Calls: ").append(outerCalls).append(" BYN/min");
+            sb.append("\n\tFixed Line Calls: ").append(fixedLineCalls).append(" BYN/min");
             return sb.toString();
         }
     }
@@ -171,11 +169,10 @@ public class Tariff {
 
         @Override
         public String toString() {
-            final StringBuilder sb = new StringBuilder("TariffParameter{");
-            sb.append("favoriteNum=").append(favoriteNum);
-            sb.append(", tariffication=").append(tariffication);
-            sb.append(", startPay=").append(startPay);
-            sb.append('}');
+            final StringBuilder sb = new StringBuilder("\nOther: ");
+            sb.append("\n\tFavorite numbers: ").append(favoriteNum);
+            sb.append("\n\tTariffication: ").append(tariffication).append(" sec");
+            sb.append("\n\tStart Pay: ").append(startPay).append(" BYN");
             return sb.toString();
         }
     }
