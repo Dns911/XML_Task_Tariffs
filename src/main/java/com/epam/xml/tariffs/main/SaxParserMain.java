@@ -1,5 +1,6 @@
-package com.epam.xml.tariffs.parser;
+package com.epam.xml.tariffs.main;
 
+import com.epam.xml.tariffs.parser.TariffSaxBuilder;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,6 +11,6 @@ public class SaxParserMain {
         TariffSaxBuilder tariffSaxBuilder = new TariffSaxBuilder();
         tariffSaxBuilder.buildSetTariffs("data/tariffs.xml");
         System.out.println(tariffSaxBuilder.getTariffs());
-        logger.log(Level.INFO, tariffSaxBuilder.getTariffs());
+        logger.log(Level.ALL, tariffSaxBuilder.getTariffs().toString());
     }
 }

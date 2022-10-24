@@ -1,9 +1,12 @@
 package com.epam.xml.tariffs.entity;
 
+import java.time.Instant;
 
 public class Tariff {
+    private String uniqueName;
     private String name;
     private String operatorName;
+    private Instant startDate;
     private double payroll;
     private CallPrice callPrice = new CallPrice();
     private double smsPrice;
@@ -12,13 +15,22 @@ public class Tariff {
     public Tariff() {
     }
 
-    public Tariff(String name, String operatorName, double payroll, CallPrice callPrice, double smsPrice, TariffParameter tariffParameter) {
+    public Tariff(String name, String operatorName, Instant startDate, double payroll, CallPrice callPrice, double smsPrice, TariffParameter tariffParameter) {
         this.name = name;
         this.operatorName = operatorName;
+        this.startDate = startDate;
         this.payroll = payroll;
         this.callPrice = callPrice;
         this.smsPrice = smsPrice;
         this.tariffParameter = tariffParameter;
+    }
+
+    public String getUniqueName() {
+        return uniqueName;
+    }
+
+    public void setUniqueName(String uniqueName) {
+        this.uniqueName = uniqueName;
     }
 
     public String getName() {
@@ -35,6 +47,14 @@ public class Tariff {
 
     public void setOperatorName(String operatorName) {
         this.operatorName = operatorName;
+    }
+
+    public Instant getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Instant startDate) {
+        this.startDate = startDate;
     }
 
     public double getPayroll() {
@@ -71,9 +91,11 @@ public class Tariff {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("TARIFF ");
+        final StringBuilder sb = new StringBuilder("\nTARIFF ");
+        sb.append("\sid: ").append(uniqueName);
         sb.append("\nName: ").append(name);
         sb.append("\nOperator: ").append(operatorName);
+        sb.append("\nDate start: ").append(startDate);
         sb.append("\nPayroll: ").append(payroll).append(" BYN");
         sb.append(callPrice);
         sb.append("\nSMS Price: ").append(smsPrice).append(" BYN/sms");

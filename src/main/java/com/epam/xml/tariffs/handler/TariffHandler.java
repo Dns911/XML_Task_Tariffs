@@ -4,6 +4,7 @@ import com.epam.xml.tariffs.entity.Tariff;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
+import java.time.Instant;
 import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,7 +18,7 @@ public class TariffHandler extends DefaultHandler {
 
     public TariffHandler() {
         tariffs = new HashSet<>();
-        withText = EnumSet.range(TariffTag.PAYROLL, TariffTag.STARTPAY);
+        withText = EnumSet.range(TariffTag.START_DATE, TariffTag.START_PAY);
     }
 
     public Set<Tariff> getTariffs() {
@@ -27,13 +28,15 @@ public class TariffHandler extends DefaultHandler {
     public void startElement(String uri, String localName, String qName, Attributes attrs) {
         if (ELEMENT_TARIFF.equals(qName)) {
             current = new Tariff();
-            if (attrs.getLocalName(0) == "name") {
+            if (attrs.getLocalName(0).equals("name")) {
                 current.setName(attrs.getValue(0));
                 current.setOperatorName(attrs.getValue(1));
-            } else {
+
+            } else if (attrs.getLocalName(1).equals("name")) {
                 current.setName(attrs.getValue(1));
                 current.setOperatorName(attrs.getValue(0));
             }
+
         } else {
             TariffTag temp = TariffTag.valueOf(qName.toUpperCase());
             if (withText.contains(temp)) {
@@ -51,15 +54,16 @@ public class TariffHandler extends DefaultHandler {
     public void characters(char[] ch, int start, int length) {
         String data = new String(ch, start, length).strip();
         if (currentTag != null) {
-            switch (currentTag) {
-                case PAYROLL -> current.setPayroll(Double.parseDouble(data));
-                case INNERCALLS -> current.getCallPrice().setInnerCalls(Double.parseDouble(data));
-                case OUTERCALLS -> current.getCallPrice().setOuterCalls(Double.parseDouble(data));
-                case FIXEDLINECALLS -> current.getCallPrice().setFixedLineCalls(Double.parseDouble(data));
-                case SMSPRICE -> current.setSmsPrice(Double.parseDouble(data));
-                case FAVORITENUM -> current.getTariffParameter().setFavoriteNum(Integer.parseInt(data));
-                case TARIFFICATION -> current.getTariffParameter().setTariffication(Integer.parseInt(data));
-                case STARTPAY -> current.getTariffParameter().setStartPay(Double.parseDouble(data));
+            switch (currentTag.getValue()) {
+                case "start_Date" -> current.setStartDate(Instant.parse(data + "T00:00:00.00Z"));
+                case "payroll" -> current.setPayroll(Double.parseDouble(data));
+                case "inner_Calls" -> current.getCallPrice().setInnerCalls(Double.parseDouble(data));
+                case "outer_Calls" -> current.getCallPrice().setOuterCalls(Double.parseDouble(data));
+                case "fixed_Line_Calls" -> current.getCallPrice().setFixedLineCalls(Double.parseDouble(data));
+                case "sms_Price" -> current.setSmsPrice(Double.parseDouble(data));
+                case "favorite_Num" -> current.getTariffParameter().setFavoriteNum(Integer.parseInt(data));
+                case "tariffication" -> current.getTariffParameter().setTariffication(Integer.parseInt(data));
+                case "start_Pay" -> current.getTariffParameter().setStartPay(Double.parseDouble(data));
                 default -> throw new EnumConstantNotPresentException(
                         currentTag.getDeclaringClass(), currentTag.name());
             }

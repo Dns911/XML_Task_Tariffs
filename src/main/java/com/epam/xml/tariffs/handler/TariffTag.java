@@ -2,19 +2,21 @@ package com.epam.xml.tariffs.handler;
 
 public enum TariffTag {
     TARIFFS("tariffs"),
+    UNIQUE_NAME ("unique_Name"),
     NAME("name"),
-    OPERATOR_NAME("operator name"),
+    OPERATOR_NAME("operator_Name"),
     TARIFF("tariff"),
+    START_DATE("start_Date"),
     PAYROLL("payroll"),
-    INNERCALLS("inner calls"),
-    OUTERCALLS("outer calls"),
-    FIXEDLINECALLS("fixed line calls"),
-    SMSPRICE("SMS price"),
-    FAVORITENUM("favorite number"),
+    INNER_CALLS("inner_Calls"),
+    OUTER_CALLS("outer_Calls"),
+    FIXED_LINE_CALLS("fixed_Line_Calls"),
+    SMS_PRICE("sms_Price"),
+    FAVORITE_NUM("favorite_Num"),
     TARIFFICATION("tariffication"),
-    STARTPAY("start pay"),
-    CALLPRICE("call price"),
-    TARIFFPARAMETER("tariff parameter");
+    START_PAY("start_Pay"),
+    CALL_PRICE("Call_Price"),
+    TARIFF_PARAMETER("Tariff_Parameter");
 
     private String value;
 
