@@ -38,7 +38,7 @@ public class TariffHandler extends DefaultHandler {
             }
 
         } else {
-            TariffTag temp = TariffTag.valueOf(qName.toUpperCase());
+            TariffTag temp = TariffTag.getTag(qName);
             if (withText.contains(temp)) {
                 currentTag = temp;
             }
@@ -55,15 +55,15 @@ public class TariffHandler extends DefaultHandler {
         String data = new String(ch, start, length).strip();
         if (currentTag != null) {
             switch (currentTag.getValue()) {
-                case "start_Date" -> current.setStartDate(Instant.parse(data + "T00:00:00.00Z"));
+                case "startDate" -> current.setStartDate(Instant.parse(data + "T00:00:00.00Z"));
                 case "payroll" -> current.setPayroll(Double.parseDouble(data));
-                case "inner_Calls" -> current.getCallPrice().setInnerCalls(Double.parseDouble(data));
-                case "outer_Calls" -> current.getCallPrice().setOuterCalls(Double.parseDouble(data));
-                case "fixed_Line_Calls" -> current.getCallPrice().setFixedLineCalls(Double.parseDouble(data));
-                case "sms_Price" -> current.setSmsPrice(Double.parseDouble(data));
-                case "favorite_Num" -> current.getTariffParameter().setFavoriteNum(Integer.parseInt(data));
+                case "innerCalls" -> current.getCallPrice().setInnerCalls(Double.parseDouble(data));
+                case "outerCalls" -> current.getCallPrice().setOuterCalls(Double.parseDouble(data));
+                case "fixedLineCalls" -> current.getCallPrice().setFixedLineCalls(Double.parseDouble(data));
+                case "smsPrice" -> current.setSmsPrice(Double.parseDouble(data));
+                case "favoriteNum" -> current.getTariffParameter().setFavoriteNum(Integer.parseInt(data));
                 case "tariffication" -> current.getTariffParameter().setTariffication(Integer.parseInt(data));
-                case "start_Pay" -> current.getTariffParameter().setStartPay(Double.parseDouble(data));
+                case "startPay" -> current.getTariffParameter().setStartPay(Double.parseDouble(data));
                 default -> throw new EnumConstantNotPresentException(
                         currentTag.getDeclaringClass(), currentTag.name());
             }

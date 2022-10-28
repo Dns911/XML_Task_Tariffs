@@ -62,7 +62,7 @@ public class TariffSTaxBuilder {
             switch (type) {
                 case XMLStreamConstants.START_ELEMENT:
                     name = reader.getLocalName();
-                    switch (TariffTag.valueOf(name.toUpperCase())) {
+                    switch (TariffTag.getTag(name)) {
                         case START_DATE -> tariff.setStartDate(Instant.parse(getXMLText(reader) + "T00:00:00.00Z"));
                         case PAYROLL -> tariff.setPayroll(Double.parseDouble(getXMLText(reader)));
                         case CALL_PRICE -> tariff.setCallPrice(getXMLCallPrice(reader));
@@ -72,7 +72,7 @@ public class TariffSTaxBuilder {
                     break;
                 case XMLStreamConstants.END_ELEMENT:
                     name = reader.getLocalName();
-                    if (TariffTag.valueOf(name.toUpperCase()) == TariffTag.TARIFF) {
+                    if (TariffTag.getTag(name).equals(TariffTag.TARIFF)) {
                         return tariff;
                     }
             }
@@ -89,7 +89,7 @@ public class TariffSTaxBuilder {
             switch (type) {
                 case XMLStreamConstants.START_ELEMENT:
                     name = reader.getLocalName();
-                    switch (TariffTag.valueOf(name.toUpperCase())) {
+                    switch (TariffTag.getTag(name)) {
                         case INNER_CALLS -> callPrice.setInnerCalls(Double.parseDouble(getXMLText(reader)));
                         case OUTER_CALLS -> callPrice.setOuterCalls(Double.parseDouble(getXMLText(reader)));
                         case FIXED_LINE_CALLS -> callPrice.setFixedLineCalls(Double.parseDouble(getXMLText(reader)));
@@ -97,7 +97,7 @@ public class TariffSTaxBuilder {
                     break;
                 case XMLStreamConstants.END_ELEMENT:
                     name = reader.getLocalName();
-                    if (TariffTag.valueOf(name.toUpperCase()) == TariffTag.CALL_PRICE) {
+                    if (TariffTag.getTag(name).equals(TariffTag.CALL_PRICE)) {
                         return callPrice;
                     }
             }
@@ -114,7 +114,7 @@ public class TariffSTaxBuilder {
             switch (type) {
                 case XMLStreamConstants.START_ELEMENT:
                     name = reader.getLocalName();
-                    switch (TariffTag.valueOf(name.toUpperCase())) {
+                    switch (TariffTag.getTag(name)) {
                         case FAVORITE_NUM -> tariffParameter.setFavoriteNum(Integer.parseInt(getXMLText(reader)));
                         case TARIFFICATION -> tariffParameter.setTariffication(Integer.parseInt(getXMLText(reader)));
                         case START_PAY -> tariffParameter.setStartPay(Double.parseDouble(getXMLText(reader)));
@@ -122,7 +122,7 @@ public class TariffSTaxBuilder {
                     break;
                 case XMLStreamConstants.END_ELEMENT:
                     name = reader.getLocalName();
-                    if (TariffTag.valueOf(name.toUpperCase()) == TariffTag.TARIFF_PARAMETER) {
+                    if (TariffTag.getTag(name).equals(TariffTag.TARIFF_PARAMETER)) {
                         return tariffParameter;
                     }
             }

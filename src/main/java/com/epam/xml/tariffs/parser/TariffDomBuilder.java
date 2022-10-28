@@ -58,24 +58,24 @@ public class TariffDomBuilder {
     private Tariff buildTariff(Element tariffElement) {
         Tariff tariff = new Tariff();
         tariff.setName(tariffElement.getAttribute("name"));
-        tariff.setOperatorName(tariffElement.getAttribute("operator_Name"));
-        tariff.setUniqueName(tariffElement.getAttribute("unique_Name"));
-        tariff.setStartDate(Instant.parse(getElementTextContent(tariffElement, "start_Date") + "T00:00:00.00Z"));
+        tariff.setOperatorName(tariffElement.getAttribute("operatorName"));
+        tariff.setUniqueName(tariffElement.getAttribute("uniqueName"));
+        tariff.setStartDate(Instant.parse(getElementTextContent(tariffElement, "startDate") + "T00:00:00.00Z"));
         tariff.setPayroll(Double.parseDouble(getElementTextContent(tariffElement, "payroll")));
 
         Tariff.CallPrice callPrice = tariff.getCallPrice();
-        Element callPriceElement = (Element) tariffElement.getElementsByTagName("Call_Price").item(0);
-        callPrice.setInnerCalls(Double.parseDouble(getElementTextContent(tariffElement, "inner_Calls")));
-        callPrice.setOuterCalls(Double.parseDouble(getElementTextContent(tariffElement, "outer_Calls")));
-        callPrice.setFixedLineCalls(Double.parseDouble(getElementTextContent(tariffElement, "fixed_Line_Calls")));
+        Element callPriceElement = (Element) tariffElement.getElementsByTagName("CallPrice").item(0);
+        callPrice.setInnerCalls(Double.parseDouble(getElementTextContent(tariffElement, "innerCalls")));
+        callPrice.setOuterCalls(Double.parseDouble(getElementTextContent(tariffElement, "outerCalls")));
+        callPrice.setFixedLineCalls(Double.parseDouble(getElementTextContent(tariffElement, "fixedLineCalls")));
 
-        tariff.setSmsPrice(Double.parseDouble(getElementTextContent(tariffElement, "sms_Price")));
+        tariff.setSmsPrice(Double.parseDouble(getElementTextContent(tariffElement, "smsPrice")));
 
         Tariff.TariffParameter tariffParameter = tariff.getTariffParameter();
-        Element tariffParemeterElement = (Element) tariffElement.getElementsByTagName("Tariff_Parameter").item(0);
-        tariffParameter.setFavoriteNum(Integer.parseInt(getElementTextContent(tariffElement, "favorite_Num")));
+        Element tariffParemeterElement = (Element) tariffElement.getElementsByTagName("TariffParameter").item(0);
+        tariffParameter.setFavoriteNum(Integer.parseInt(getElementTextContent(tariffElement, "favoriteNum")));
         tariffParameter.setTariffication(Integer.parseInt(getElementTextContent(tariffElement, "tariffication")));
-        tariffParameter.setStartPay(Double.parseDouble(getElementTextContent(tariffElement, "start_Pay")));
+        tariffParameter.setStartPay(Double.parseDouble(getElementTextContent(tariffElement, "startPay")));
         return tariff;
     }
 

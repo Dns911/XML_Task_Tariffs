@@ -1,22 +1,25 @@
 package com.epam.xml.tariffs.handler;
 
+import java.util.Arrays;
+import java.util.List;
+
 public enum TariffTag {
     TARIFFS("tariffs"),
-    UNIQUE_NAME ("unique_Name"),
+    UNIQUE_NAME ("uniqueName"),
     NAME("name"),
-    OPERATOR_NAME("operator_Name"),
+    OPERATOR_NAME("operatorName"),
     TARIFF("tariff"),
-    START_DATE("start_Date"),
+    START_DATE("startDate"),
     PAYROLL("payroll"),
-    INNER_CALLS("inner_Calls"),
-    OUTER_CALLS("outer_Calls"),
-    FIXED_LINE_CALLS("fixed_Line_Calls"),
-    SMS_PRICE("sms_Price"),
-    FAVORITE_NUM("favorite_Num"),
+    INNER_CALLS("innerCalls"),
+    OUTER_CALLS("outerCalls"),
+    FIXED_LINE_CALLS("fixedLineCalls"),
+    SMS_PRICE("smsPrice"),
+    FAVORITE_NUM("favoriteNum"),
     TARIFFICATION("tariffication"),
-    START_PAY("start_Pay"),
-    CALL_PRICE("Call_Price"),
-    TARIFF_PARAMETER("Tariff_Parameter");
+    START_PAY("startPay"),
+    CALL_PRICE("CallPrice"),
+    TARIFF_PARAMETER("TariffParameter");
 
     private String value;
 
@@ -26,5 +29,10 @@ public enum TariffTag {
 
     public String getValue() {
         return value;
+    }
+
+    static public TariffTag getTag(String value){
+        List<TariffTag> result = Arrays.stream(TariffTag.values()).filter(e -> e.getValue().equals(value)).toList();
+        return result.get(0);
     }
 }

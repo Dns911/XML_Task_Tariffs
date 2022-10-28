@@ -3,7 +3,6 @@ package com.epam.xml.tariffs.parser;
 import com.epam.xml.tariffs.entity.Tariff;
 import com.epam.xml.tariffs.handler.TariffErrorHandler;
 import com.epam.xml.tariffs.handler.TariffHandler;
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -36,11 +35,11 @@ public class TariffSaxBuilder {
     public Set<Tariff> getTariffs() {
         return tariffs;
     }
-    public void buildSetTariffs(String filename){
+
+    public void buildSetTariffs(String filename) {
         try {
             reader.parse(filename);
-        }
-        catch (IOException | SAXException e){
+        } catch (IOException | SAXException e) {
             logger.fatal(e.getMessage());
         }
         tariffs = handler.getTariffs();

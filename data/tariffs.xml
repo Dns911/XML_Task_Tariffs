@@ -2,34 +2,49 @@
 <tariffs xmlns="http://www.example.com/tariffs"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://www.example.com/tariffs tariffs.xsd">
-    <tariff unique_Name="A00124" name="Smart 1" operator_Name="A1">
-        <start_Date>2018-09-02</start_Date>
+    <tariff uniqueName="A00124" name="Smart 1" operatorName="A1">
+        <startDate>2018-09-02</startDate>
         <payroll>15.25</payroll>
-        <Call_Price>
-            <inner_Calls>0.20</inner_Calls>
-            <outer_Calls>0.75</outer_Calls>
-            <fixed_Line_Calls>1.10</fixed_Line_Calls>
-        </Call_Price>
-        <sms_Price>0.15</sms_Price>
-        <Tariff_Parameter>
-            <favorite_Num>2</favorite_Num>
+        <CallPrice>
+            <innerCalls>0.20</innerCalls>
+            <outerCalls>0.75</outerCalls>
+            <fixedLineCalls>1.10</fixedLineCalls>
+        </CallPrice>
+        <smsPrice>0.15</smsPrice>
+        <TariffParameter>
+            <favoriteNum>2</favoriteNum>
             <tariffication>60</tariffication>
-            <start_Pay>5.05</start_Pay>
-        </Tariff_Parameter>
+            <startPay>5.05</startPay>
+        </TariffParameter>
     </tariff>
-    <tariff unique_Name="A00125" name="Smart 4" operator_Name="A1">
-        <start_Date>2018-09-02</start_Date>
+    <tariff uniqueName="A00125" name="Smart 4" operatorName="A1">
+        <startDate>2018-09-02</startDate>
         <payroll>20.25</payroll>
-        <Call_Price>
-            <inner_Calls>0.15</inner_Calls>
-            <outer_Calls>0.55</outer_Calls>
-            <fixed_Line_Calls>1.00</fixed_Line_Calls>
-        </Call_Price>
-        <sms_Price>0.12</sms_Price>
-        <Tariff_Parameter>
-            <favorite_Num>5</favorite_Num>
+        <CallPrice>
+            <innerCalls>0.15</innerCalls>
+            <outerCalls>0.55</outerCalls>
+            <fixedLineCalls>1.00</fixedLineCalls>
+        </CallPrice>
+        <smsPrice>0.12</smsPrice>
+        <TariffParameter>
+            <favoriteNum>5</favoriteNum>
             <tariffication>60</tariffication>
-            <start_Pay>7.05</start_Pay>
-        </Tariff_Parameter>
+            <startPay>7.05</startPay>
+        </TariffParameter>
+    </tariff>
+    <tariff uniqueName="M00006" name="Super 1" operatorName="MTS">
+        <startDate>2019-01-02</startDate>
+        <payroll>23.25</payroll>
+        <CallPrice>
+            <innerCalls>0.12</innerCalls>
+            <outerCalls>0.65</outerCalls>
+            <fixedLineCalls>1.20</fixedLineCalls>
+        </CallPrice>
+        <smsPrice>0.42</smsPrice>
+        <TariffParameter>
+            <favoriteNum>2</favoriteNum>
+            <tariffication>12</tariffication>
+            <startPay>1.05</startPay>
+        </TariffParameter>
     </tariff>
 </tariffs>
