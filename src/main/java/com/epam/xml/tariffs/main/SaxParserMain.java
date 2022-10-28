@@ -11,6 +11,5 @@ public class SaxParserMain {
         TariffSaxBuilder tariffSaxBuilder = new TariffSaxBuilder();
         tariffSaxBuilder.buildSetTariffs("data/tariffs.xml");
         System.out.println(tariffSaxBuilder.getTariffs());
-        logger.log(Level.ALL, tariffSaxBuilder.getTariffs().toString());
     }
 }
